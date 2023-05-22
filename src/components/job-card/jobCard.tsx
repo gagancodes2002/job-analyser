@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import "../job-card/style.scss";
-import CompanyLogo from "../../components/images/logo.png";
+import CompanyLogo from "../images/company-logo.avif";
 import Image from "next/image";
 
 

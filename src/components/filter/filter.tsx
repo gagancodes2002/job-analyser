@@ -1,5 +1,7 @@
 "use client";
+
 import { useState } from "react";
+
 const Filter = (props: any) => {
   const [currentFilter, setCurrentFilter] = useState("best-matches");
 
@@ -14,7 +16,7 @@ const Filter = (props: any) => {
     if (currentFilter === filterKey) {
       className =
         "cursor-pointer rounded-md shadow-lg w-1/3 p-2 text-center bg-[#000000]";
-  }
+    }
     return className;
   };
 

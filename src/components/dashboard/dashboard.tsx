@@ -3,13 +3,14 @@
 import JobList from "../jobList";
 import Filter from "../filter/filter";
 import JobView from "../job-view/JobView";
-import { useEffect, useState } from "react";
 import SearchBar from "../searchbar/SearchBar";
 import ProfileCard from "../profile-card/ProfileCard";
 import ProfileInfo from "../profile-view/ProfileView";
 import LoadingCard from "../loading-card/loading-card";
+import { useEffect, useState } from "react";
 import { useQuery, useQueryClient } from "react-query";
-import { jobs, searchJobs } from "../../api/jobsApi";
+import { searchJobs } from "../../api/jobsApi";
+import "./style.scss";
 
 interface Props {}
 
@@ -45,10 +46,10 @@ const Dashboard = (props: Props) => {
   }, [data]);
 
   return (
-    <div className="flex md:flex-row sm:flex-wrap  space-x-2 m-4 justify-around bg-[#F3F3F3]">
+    <div className="flex md:flex-row sm:flex-wrap space-x-2 m-4 justify-around bg-[#F3F3F3]">
       <div className={"w-3.5/12 space-y-4"}>
         <Filter></Filter>
-        <div className="overflow-y-scroll max-h-[36rem]">
+        <div className="overflow-y-scroll max-h-[36rem] sleek-scrollbar">
           {isLoading ? (
             <LoadingCard />
           ) : (
@@ -56,7 +57,7 @@ const Dashboard = (props: Props) => {
           )}
         </div>
       </div>
-      <div className="middleView w-6/12 h-scren">
+      <div className="middleView w-6/12 h-scren space-y-2">
         <SearchBar setSearchValue={handleSearch}></SearchBar>
         <JobView {...activeJob}></JobView>
       </div>

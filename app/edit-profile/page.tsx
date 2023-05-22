@@ -1,16 +1,17 @@
 "use client";
 
-import { Switch, Spacer, Button } from "@nextui-org/react";
-import { useEffect, useState } from "react";
-import ShowEditProfileModal from "../../src/components/modal/modal";
-import EditForm from "../../src/components/edit-form/EditForm";
-import constants from "../../src/constants";
-import "./styles.scss";
-import { useQueryClient, useQuery, useMutation } from "react-query";
-import { getResume, updateResume } from "@/src/api/jobsApi";
-import LoadingCard from "../dashboard/loading";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import LoadingCard from "../dashboard/loading";
+import { Switch, Spacer, Button } from "@nextui-org/react";
+import { getResume, updateResume } from "@/src/api/jobsApi";
 import CompanyLogo from "../../src/components/images/logo.png";
+import EditForm from "../../src/components/edit-form/EditForm";
+import { useQueryClient, useQuery, useMutation } from "react-query";
+import ShowEditProfileModal from "../../src/components/modal/modal";
+import userPhoto from "../../src/components/images/userProfile.jpg";
+import './styles.scss'
+
 
 interface Props {
   timePeriod: string;
@@ -99,7 +100,7 @@ const EditProfile = () => {
               <Image
                 alt="User Photo"
                 className="w-full h-full object-cover rounded-t-lg"
-                src={CompanyLogo}
+                src={userPhoto}
               ></Image>
             </div>
             <div
@@ -110,7 +111,7 @@ const EditProfile = () => {
               <Image
                 alt="User Photo"
                 className="w-24 h-24 rounded-full"
-                src={CompanyLogo}
+                src={userPhoto}
               ></Image>
             </div>
             <div className="!bg-white-100 rounded-b-lg p-4 flex-none">
@@ -142,12 +143,13 @@ const EditProfile = () => {
                     </div>
                   </div>
                 </div>
-                <div className=" w-4/12 flex flex-row space-x-6">
+                <div className=" w-4/12 flex flex-row justify-around ">
                   <span className="text-xs text-gray-500">
                     {resume?.university}
                   </span>
                   <div className="">
                     <Button
+                    style={{zIndex:"0"}}
                       auto
                       color="primary"
                       size={"xs"}
@@ -178,17 +180,17 @@ const EditProfile = () => {
           </div>
         </div>
         {resume ? (
-          <div className="w-7/12 rounded-md shadow-lg text-gray-700 h-[calc(100vh-100px)] overflow-y-scroll">
+          <div className="w-7/12 rounded-md shadow-lg text-gray-700 h-[calc(100vh-100px)] overflow-y-scroll sleek-scrollbar">
             <div className="resume rounded-md bg-white">
               <div className="flex flex-col lg:flex-row ">
-                <div className="lg:w-1/3 w-full flex flex-col bg-gray-700 overflow-x-clip pb-6">
+                <div className="lg:w-1/3 w-full flex flex-col bg-gray-700 overflow-x-clip pb-6 ">
                   <div
                     className={`userPhoto flex flex-row justify-center p-2 mt-8 rounded-full`}
                   >
                     <Image
                       alt="User Photo"
                       className="w-36 h-36 rounded-full"
-                      src={CompanyLogo}
+                      src={userPhoto}
                     ></Image>
                   </div>
                   <ResumeLeftSubSection

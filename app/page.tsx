@@ -4,7 +4,7 @@ import NavBar from "../src/components/navbar";
 
 export default function Home() {
   return (
-    <div>
+    <div className="h-[calc(100vh-100px)]">
       <div>Home</div>
     </div>
   );

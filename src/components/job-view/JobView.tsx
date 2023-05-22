@@ -3,7 +3,8 @@
 import { useState } from "react";
 import LoadingCard from "../loading-card/loading-card";
 import Image from "next/image";
-import CompanyLogo from "../../public/images/company-logo.png";
+import CompanyLogo from '../images/company-logo.avif';
+import "./style.scss"
 
 interface Props {
   title: string;
@@ -56,13 +57,13 @@ const JobView = (props: Props) => {
           <div className="job-description mt-4 flex-col sleek-scrollbar">
             <h1 className="py-2 font-bold">Job Description</h1>
             <p
-              className="text-gray-300 max-h-44 overflow-y-auto"
+              className="text-gray-300 max-h-44 overflow-y-auto sleek-scrollbar"
               dangerouslySetInnerHTML={{ __html: props.description }}
             ></p>
           </div>
           <div className="skills-n-expertise">
             <h1 className="py-2 font-bold">Skills and Expertise</h1>
-            <div className="flex flex-row flex-wrap float-left overflow-y-auto max-h-20">
+            <div className="flex flex-row flex-wrap float-left overflow-y-auto max-h-20 sleek-scrollbar">
               {props.requiredTechnicalSkills.length &&
                 props.requiredTechnicalSkills.map((skill) => {
                   return (

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import CompanyLogo from "../../public/company-logo.png";
+import userPhoto from '../images/userProfile.jpg'
 
 const ProfileCard = (props: any) => {
   return (
@@ -8,7 +8,7 @@ const ProfileCard = (props: any) => {
       <Image
         alt="profile picture"
         className="w-24 h-24 rounded-full"
-        src={CompanyLogo}
+        src={userPhoto}
       ></Image>
       <span className="font-bold py-2">Julius Caesar</span>
       <span className="text-xs font-light py-1">Product Designer</span>
