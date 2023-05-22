@@ -9,6 +9,7 @@ import "./styles.scss";
 import { useQueryClient, useQuery, useMutation } from "react-query";
 import { getResume, updateResume } from "@/src/api/jobsApi";
 import LoadingCard from "../dashboard/loading";
+import Image from "next/image";
 
 interface Props {
   timePeriod: string;
@@ -42,15 +43,15 @@ const ResumeLeftSubSection = (props: any) => {
         <h1 className="text-md font-bold underline-elm">{props.title}</h1>
       </div>
       {props.childrenWithLabel &&
-        props.childrenWithLabel.map((child: any) => (
-          <div className="mt-4">
+        props.childrenWithLabel.map((child: any, i: number) => (
+          <div key={i} className="mt-4">
             <h2 className="text-sm font-semibold">{child.label}</h2>
             <p className="text-xs ">{child.value}</p>
           </div>
         ))}
-      {props.children &&
-        props.children.map((child: any) => (
-          <div className="mt-2">
+      {props.childrenWithoutLabel &&
+        props.childrenWithoutLabel.map((child: any, i: number) => (
+          <div key={i} className="mt-2">
             <h2 className="text-sm font-semibold">{child}</h2>
           </div>
         ))}
@@ -80,12 +81,6 @@ const EditProfile = () => {
     setUpdateData((old: Boolean) => !old);
   };
 
-  useEffect(() => {
-    if (resume) {
-      queryClient.setQueryData("resume", resume);
-    }
-  }, [resume]);
-
   return (
     <div className="min-w-screen">
       {isEditProfileVisible && (
@@ -100,20 +95,22 @@ const EditProfile = () => {
         <div className="w-5/12 space-y-2 space-x-2">
           <div className="relative user-card shadow-lg">
             <div className="flex-none h-40">
-              <img
+              <Image
+                alt="User Photo"
                 className="w-full h-full object-cover rounded-t-lg"
                 src="https://marketplace.canva.com/EAFB2eB7C3o/1/0/1600w/canva-yellow-and-turquoise-vintage-rainbow-desktop-wallpaper-Y4mYj0d-9S8.jpg"
-              ></img>
+              ></Image>
             </div>
             <div
               className={`userPhoto absolute top-24 left-4 p-2 rounded-full ${
                 openToWork ? "bg-green-500 !shadow-green-800" : "!bg-slate-500"
               }`}
             >
-              <img
+              <Image
+                alt="User Photo"
                 className="w-24 h-24 rounded-full"
                 src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
-              ></img>
+              ></Image>
             </div>
             <div className="!bg-white-100 rounded-b-lg p-4 flex-none">
               <div className="flex flex-row mt-8">
@@ -187,10 +184,11 @@ const EditProfile = () => {
                   <div
                     className={`userPhoto flex flex-row justify-center p-2 mt-8 rounded-full`}
                   >
-                    <img
+                    <Image
+                      alt="User Photo"
                       className="w-36 h-36 rounded-full"
                       src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
-                    ></img>
+                    ></Image>
                   </div>
                   <ResumeLeftSubSection
                     title={"Contact"}
@@ -215,11 +213,11 @@ const EditProfile = () => {
                   />
                   <ResumeLeftSubSection
                     title={"Expertise"}
-                    children={resume.technicalSkills?.slice(0, 3)}
+                    childrenWithoutLabel={resume.technicalSkills?.slice(0, 3)}
                   />
                   <ResumeLeftSubSection
                     title={"Languages"}
-                    children={["English", "Hindi"]}
+                    childrenWithoutLabel={["English", "Hindi"]}
                   />
                 </div>
                 <div className="lg:w-2/3 w-full p-6 text-gray-700">
@@ -233,9 +231,10 @@ const EditProfile = () => {
                       Experience
                     </h1>
                   </div>
-                  {resume.experiences?.map((experience) => {
+                  {resume.experiences?.map((experience, i) => {
                     return (
                       <JobExperience
+                        key={i}
                         timePeriod={`${experience.startDate}  ${experience.endDate}`}
                         companyName={experience.company}
                         companyAddress={experience.location}

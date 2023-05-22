@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import LoadingCard from "../loading-card/loading-card";
+import Image from "next/image";
 
 interface Props {
   title: string;
@@ -20,10 +21,11 @@ const JobView = (props: Props) => {
         <div className="relative flex flex-col bg-gray-700 p-4 my-2 space-y-6 rounded-md max-h-100">
           <div className="flex flex-row mb-6">
             <div className="company-logo px-2 w-0.5/6">
-              <img
+              <Image
+                alt="Company Logo"
                 className="object-cover h-12 w-12 rounded-sm"
                 src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1024&h=1280&q=80"
-              ></img>
+              ></Image>
             </div>
             <div className="description px-2 w-5/6">
               <span className="position text-[#7AB99E] cursor-default ">

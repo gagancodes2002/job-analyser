@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const NavBar = () => {
     return (
         <nav className="sticky top-0 z-20 sm:px-6 lg:px-8 bg-[#FFFFFF] shadow-lg">
@@ -5,11 +7,11 @@ const NavBar = () => {
                 <div className="absolute inset-y-0 left-0 flex item-center sm:hidden"></div>
                 <div className="flex flex-1 items-center justify-center sm:item-stretch sm:justify-start">
                     <div className="flex justify-center align-middle">
-                        <img className="block h-8 w-auto"
+                        <Image className="block h-8 w-auto"
                             src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                             alt="Your Company"
                         >
-                        </img>
+                        </Image>
                     </div>
                     <div className="hidden sm:ml-6 sm:block">
                         <div className="flex space-x-5">

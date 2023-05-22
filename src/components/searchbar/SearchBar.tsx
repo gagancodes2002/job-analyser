@@ -90,8 +90,9 @@ const SearchBar = (props: Props) => {
         ></input>
         <div className="selectedKeywords absolute top-0">
           {selectedKeywords.length > 0 &&
-            selectedKeywords.map((option) => (
+            selectedKeywords.map((option: any, i: number) => (
               <div
+                key={i}
                 className="tag p-2 m-2 rounded-md !bg-slate-400 text-xs text-gray-800 font-bold"
                 onClick={() => {
                   setSelectedKeywords(
@@ -121,8 +122,9 @@ const SearchBar = (props: Props) => {
       </div>
       <div className="absolute top-12 z-10 bg-gray-700 flex flex-col flex-wrap float-left rounded-b-md">
         {suggestions.length > 0 &&
-          suggestions.map((option) => (
+          suggestions.map((option, i: number) => (
             <div
+              key={i}
               className="tag p-2 m-2 rounded-md !bg-slate-400 text-xs text-gray-800 font-bold"
               onClick={() => {
                 handleSelect({

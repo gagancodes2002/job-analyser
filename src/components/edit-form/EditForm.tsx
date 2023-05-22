@@ -113,8 +113,8 @@ const EditForm = (props: Props) => {
               value={formData.headline}
               onChange={handleInputChange}
             >
-              {positions.map((position) => (
-                <option className="text-gray-500 rounded-md" value={position}>
+              {positions.map((position,i) => (
+                <option key={i} className="text-gray-500 rounded-md" value={position}>
                   {position}
                 </option>
               ))}
