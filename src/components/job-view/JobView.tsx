@@ -3,6 +3,7 @@
 import { useState } from "react";
 import LoadingCard from "../loading-card/loading-card";
 import Image from "next/image";
+import CompanyLogo from "../../public/images/company-logo.png";
 
 interface Props {
   title: string;
@@ -24,7 +25,7 @@ const JobView = (props: Props) => {
               <Image
                 alt="Company Logo"
                 className="object-cover h-12 w-12 rounded-sm"
-                src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1024&h=1280&q=80"
+                src={CompanyLogo}
               ></Image>
             </div>
             <div className="description px-2 w-5/6">

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import CompanyLogo from "../../public/company-logo.png";
 
 const ProfileCard = (props: any) => {
   return (
@@ -7,7 +8,7 @@ const ProfileCard = (props: any) => {
       <Image
         alt="profile picture"
         className="w-24 h-24 rounded-full"
-        src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
+        src={CompanyLogo}
       ></Image>
       <span className="font-bold py-2">Julius Caesar</span>
       <span className="text-xs font-light py-1">Product Designer</span>

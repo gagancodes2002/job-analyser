@@ -10,6 +10,7 @@ import { useQueryClient, useQuery, useMutation } from "react-query";
 import { getResume, updateResume } from "@/src/api/jobsApi";
 import LoadingCard from "../dashboard/loading";
 import Image from "next/image";
+import CompanyLogo from "../../src/components/images/logo.png";
 
 interface Props {
   timePeriod: string;
@@ -98,7 +99,7 @@ const EditProfile = () => {
               <Image
                 alt="User Photo"
                 className="w-full h-full object-cover rounded-t-lg"
-                src="https://marketplace.canva.com/EAFB2eB7C3o/1/0/1600w/canva-yellow-and-turquoise-vintage-rainbow-desktop-wallpaper-Y4mYj0d-9S8.jpg"
+                src={CompanyLogo}
               ></Image>
             </div>
             <div
@@ -109,7 +110,7 @@ const EditProfile = () => {
               <Image
                 alt="User Photo"
                 className="w-24 h-24 rounded-full"
-                src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
+                src={CompanyLogo}
               ></Image>
             </div>
             <div className="!bg-white-100 rounded-b-lg p-4 flex-none">
@@ -187,7 +188,7 @@ const EditProfile = () => {
                     <Image
                       alt="User Photo"
                       className="w-36 h-36 rounded-full"
-                      src="https://flowbite.com/docs/images/people/profile-picture-3.jpg"
+                      src={CompanyLogo}
                     ></Image>
                   </div>
                   <ResumeLeftSubSection

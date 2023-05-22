@@ -8,7 +8,7 @@ const NavBar = () => {
                 <div className="flex flex-1 items-center justify-center sm:item-stretch sm:justify-start">
                     <div className="flex justify-center align-middle">
                         <Image className="block h-8 w-auto"
-                            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                            src={CompanyLogo}
                             alt="Your Company"
                         >
                         </Image>

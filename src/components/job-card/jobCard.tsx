@@ -1,7 +1,9 @@
 "use client";
 import { useState } from "react";
 import "../job-card/style.scss";
+import CompanyLogo from "../../components/images/logo.png";
 import Image from "next/image";
+
 
 export interface Props {
   title: string;
@@ -21,7 +23,7 @@ const JobCard = (props: Props) => {
           <Image
             alt="Company Logo"
             className="object-cover h-12 w-12 rounded-sm"
-            src="https://images.unsplash.com/photo-1554629947-334ff61d85dc?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1024&h=1280&q=80"
+            src={CompanyLogo}
           ></Image>
         </div>
         <div className="description px-2 w-4/6 ">
