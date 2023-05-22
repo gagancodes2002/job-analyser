@@ -1,0 +1,22 @@
+.underline-elm {
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    top: 100%;
+    position: absolute;
+    background: #dadada;
+  }
+  &-dark::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    top: 100%;
+    position: absolute;
+    background: #374151;
+  }
+}
