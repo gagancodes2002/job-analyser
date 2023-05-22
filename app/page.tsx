@@ -4,8 +4,9 @@ import NavBar from "../src/components/navbar";
 
 export default function Home() {
   return (
-    <div className="h-[calc(100vh-100px)]">
-      <div>Home</div>
+    <div className="text-gray-800 h-[calc(100vh-100px)]">
+      <div>This is home page </div>
+      <div>Please click on "Dashboard" on navbar </div>
     </div>
   );
 }
